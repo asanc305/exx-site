@@ -1,0 +1,42 @@
+<div style="text-align:center">
+  <h1>
+    "FULL MENU"
+  </h1>
+</div>
+
+<h2>RICE</h2>
+<div>
+  <ul class="list">
+    <li *ngFor="let food of filterFoods('r')">
+    {{food.name}}      
+    </li>
+  </ul>
+</div>
+
+<h2>BEANS</h2>
+<ul >
+  <li *ngFor="let food of filterFoods('b')">
+     <span class="badge">{{food.id}}</span> {{food.name}}
+  </li>
+</ul>
+
+<h2>MEATS</h2>
+<ul >
+  <li *ngFor="let food of filterFoods('b')">
+     <span class="badge">{{food.id}}</span> {{food.name}}
+  </li>
+</ul>
+
+<h2>SIDES</h2>
+<ul >
+  <li *ngFor="let food of filterFoods('s')">
+     <span class="badge">{{food.id}}</span> {{food.name}}
+  </li>
+</ul>
+
+<h2>OTHER</h2>
+<ul >
+  <li *ngFor="let food of filterFoods('o')">
+     <span class="badge">{{food.id}}</span> {{food.name}}
+  </li>
+</ul>
