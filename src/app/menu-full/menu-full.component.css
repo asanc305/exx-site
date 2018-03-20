@@ -3,10 +3,15 @@
 }
 
 .list {
-  list-style-type:none;
+  float: left;
 }
-.list li {
-  display: inline;
+
+.list a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 .module {
   padding: 20px;
@@ -16,4 +21,11 @@
   min-width: 120px;
   background-color: #607D8B;
   border-radius: 2px;
+}
+
+.lk {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { FoodItem } from '../fooditem';
 import { FoodService } from '../food.service';
@@ -10,7 +11,8 @@ import { FoodService } from '../food.service';
 })
 export class MenuFullComponent implements OnInit {
  
-  foods: FoodItem[];
+  foodsInit: any;
+  foods = [ [], [], [], [], [] ];
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
@@ -18,11 +20,30 @@ export class MenuFullComponent implements OnInit {
   }
 
   getFoods(): void {
-    this.foods = this.foodService.getFoods();
-  }
-
-  filterFoods(type) {
-    return this.foods.filter(food=> food.type == type );
+    this.foodService.getFoods()
+      .subscribe(data => {
+        for (var i = 0; i < data.length; i++) {
+          switch (data[i]['type']) {
+            case 'r':
+              this.foods[0].push(data[i]);
+              break;
+            case 'b':
+              this.foods[1].push(data[i]);
+              break;
+            case 'm':
+              this.foods[2].push(data[i]);
+              break;
+            case 's':
+              this.foods[3].push(data[i]);
+              break;
+            case 'o':
+              this.foods[4].push(data[i]);
+              break;
+          }
+        }
+      });
   }
 
 }
+
+
