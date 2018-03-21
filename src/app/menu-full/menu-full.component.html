@@ -2,44 +2,47 @@
   <h1>FULL MENU</h1>
 </div>
 
-<h2>RICE</h2>
-<div class="lk">
-  <a class="list" *ngFor="let food of foods[0]">
-    <div>
-      <h4>{{food.name}}</h4>
-    </div>
-  </a>
+<div>
+  <h2>Rice</h2>
+  <div>
+    <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
+    <mat-grid-tile *ngFor="let food of foods[0]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 
 <div>
   <h2>BEANS</h2>
-  <ul>
-    <li *ngFor="let food of foods[1]">
-       <span class="badge">{{food.id}</span> {{food.name}}
-    </li>
-  </ul>
+  <div>
+    <mat-grid-list cols="6" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let food of foods[1]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 
 <div>
   <h2>MEATS</h2>
-  <ul >
-    <li *ngFor="let food of foods[2]">
-       <span class="badge">{{food.id}}</span> {{food.name}}
-    </li>
-  </ul>
+  <div>
+    <mat-grid-list cols="6" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let food of foods[2]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 
+<div>
 <h2>SIDES</h2>
-<ul >
-  <li *ngFor="let food of foods[3]">
-     <span class="badge">{{food.id}}</span> {{food.name}}
-  </li>
-</ul>
+  <div>
+    <mat-grid-list cols="5" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let food of foods[3]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
 
+<div>
 <h2>OTHER</h2>
-<ul >
-  <li *ngFor="let food of foods[4]">
-     <span class="badge">{{food.id}}</span> {{food.name}}
-  </li>
-</ul>
-
+  <div>
+    <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let food of foods[4]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

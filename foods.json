@@ -1,0 +1,10 @@
+{"_id":{ "$oid": "5ab062f92229e00adcec4926" },"name":"White Rice","type":"r","available":"y"}
+{"_id":{ "$oid": "5ab197c85e25200b3001b047" },"name":"Congri","type":"r","available":"y"}
+{"_id":{ "$oid": "5ab1982a5e25200b3001b049" },"name":"Yellow Rice","type":"r","available":"y"}
+{"_id":{ "$oid": "5ab1983e5e25200b3001b04b" },"name":"Fried Rice","type":"r","available":"y"}
+{"_id":{ "$oid": "5ab198585e25200b3001b04d" },"name":"Yucca","type":"s","available":"y"}
+{"_id":{ "$oid": "5ab198805e25200b3001b04f" },"name":"Fried Plantain","type":"s","available":"y"}
+{"_id":{ "$oid": "5ab1989f5e25200b3001b051" },"name":"Ribs","type":"m","available":"y"}
+{"_id":{ "$oid": "5ab198bb5e25200b3001b053" },"name":"Baked Chicken","type":"m","available":"y"}
+{"_id":{ "$oid": "5ab198d85e25200b3001b055" },"name":"Pulled Pork","type":"m","available":"y"}
+{"_id":{ "$oid": "5ab198ec5e25200b3001b057" },"name":"Tamales","type":"o","available":"y"}

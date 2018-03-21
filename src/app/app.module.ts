@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { MenuTodayComponent } from './menu-today/menu-today.component';
@@ -16,7 +17,8 @@ import { FoodService } from './food.service'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [ FoodService ],
   bootstrap: [ AppComponent ]
