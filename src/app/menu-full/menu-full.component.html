@@ -6,7 +6,12 @@
   <h2>Rice</h2>
   <div>
     <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
-    <mat-grid-tile *ngFor="let food of foods[0]">{{food.name}}</mat-grid-tile>
+      <mat-grid-tile *ngFor="let food of foods[0]">
+        <div display="block">
+          <img [attr.src]="food.image" alt="{{food.image}}" height="200" width="250" align= "middle"/>
+          {{food.name}}
+        </div>
+      </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>

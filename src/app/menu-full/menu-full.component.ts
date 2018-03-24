@@ -13,6 +13,7 @@ export class MenuFullComponent implements OnInit {
  
   foodsInit: any;
   foods = [ [], [], [], [], [] ];
+  pic = 'assets/white-rice.jpeg';
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
