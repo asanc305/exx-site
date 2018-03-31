@@ -1,10 +1,19 @@
-{"_id":{ "$oid": "5ab062f92229e00adcec4926" },"name":"White Rice","type":"r","available":"y"}
-{"_id":{ "$oid": "5ab197c85e25200b3001b047" },"name":"Congri","type":"r","available":"y"}
-{"_id":{ "$oid": "5ab1982a5e25200b3001b049" },"name":"Yellow Rice","type":"r","available":"y"}
-{"_id":{ "$oid": "5ab1983e5e25200b3001b04b" },"name":"Fried Rice","type":"r","available":"y"}
-{"_id":{ "$oid": "5ab198585e25200b3001b04d" },"name":"Yucca","type":"s","available":"y"}
-{"_id":{ "$oid": "5ab198805e25200b3001b04f" },"name":"Fried Plantain","type":"s","available":"y"}
-{"_id":{ "$oid": "5ab1989f5e25200b3001b051" },"name":"Ribs","type":"m","available":"y"}
-{"_id":{ "$oid": "5ab198bb5e25200b3001b053" },"name":"Baked Chicken","type":"m","available":"y"}
-{"_id":{ "$oid": "5ab198d85e25200b3001b055" },"name":"Pulled Pork","type":"m","available":"y"}
-{"_id":{ "$oid": "5ab198ec5e25200b3001b057" },"name":"Tamales","type":"o","available":"y"}
+{"_id":{"$oid":"5ab062f92229e00adcec4926"},"name":"White Rice","type":"r","available":"y","image":"assets/white-rice.jpeg"}
+{"_id":{"$oid":"5ab197c85e25200b3001b047"},"name":"Congri","type":"r","available":"y","image":"assets/congri.jpeg"}
+{"_id":{"$oid":"5ab1982a5e25200b3001b049"},"name":"Yellow Rice","type":"r","available":"y"}
+{"_id":{"$oid":"5ab1983e5e25200b3001b04b"},"name":"Fried Rice","type":"r","available":"y"}
+{"_id":{"$oid":"5ab198585e25200b3001b04d"},"name":"Yucca","type":"s","available":"y"}
+{"_id":{"$oid":"5ab198805e25200b3001b04f"},"name":"Fried Plantain","type":"s","available":"y"}
+{"_id":{"$oid":"5ab1989f5e25200b3001b051"},"name":"Ribs","type":"m","available":"y","image":"assets/ribs.jpeg"}
+{"_id":{"$oid":"5ab198bb5e25200b3001b053"},"name":"Baked Chicken","type":"m","available":"y"}
+{"_id":{"$oid":"5ab198d85e25200b3001b055"},"name":"Pulled Pork","type":"m","available":"y","image":"assets/pulled-pork.jpg"}
+{"_id":{"$oid":"5ab198ec5e25200b3001b057"},"name":"Tamales","type":"o","available":"y"}
+{"_id":{"$oid":"5ab199025e25200b3001b059"},"name":"Chicken Soup","type":"o","available":"y"}
+{"_id":{"$oid":"5ab1b5df5e25200b3001b05b"},"name":"Black Beans","type":"b","available":"y","image":"assets/black-beans.jpg"}
+{"_id":{"$oid":"5ab1b6195e25200b3001b05d"},"name":"Lentil","type":"b","available":"y"}
+{"_id":{"$oid":"5ab1b6345e25200b3001b05f"},"name":"White Beans","type":"b","available":"y"}
+{"_id":{"$oid":"5abaffa60d233e0e1e00074a"},"name":"Goat","type":"m","available":"y"}
+{"_id":{"$oid":"5abaffbe0d233e0e1e00074c"},"name":"Lamb","type":"m","available":"y"}
+{"_id":{"$oid":"5abaffd00d233e0e1e00074e"},"name":"Fried Chicken","type":"m","available":"y"}
+{"_id":{"$oid":"5abaffe20d233e0e1e000750"},"name":"Steak","type":"m","available":"y","image":"assets/steak.jpeg"}
+{"_id":{"$oid":"5abafff80d233e0e1e000752"},"name":"Pig Feet","type":"m","available":"y","image":"assets/pig-feet.jpeg"}
