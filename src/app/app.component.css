@@ -4,3 +4,9 @@
   padding-bottom: 20px;
   font-family: 'Raleway';
 }
+
+.my-toolbar {
+  position: fixed;
+  top: 0;
+  z-index:400;
+}
