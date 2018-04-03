@@ -6,13 +6,17 @@ import { FOODITEMS1 } from './mock-items';
 
 @Injectable()
 export class FoodService {
-  foodss: any;
+  foods: any;
   constructor(private http: HttpClient) { }
 
-  getFoods() {
-    this.foodss = this.http.get('/book'); 
-    //console.log(this.foodss); 
-    return this.foodss;
+  getFull() {
+    this.foods = this.http.get('/full');
+    return this.foods;
+  }
+  
+  getToday() {
+    this.foods = this.http.get('/today');
+	return this.foods;
   }
 
 }

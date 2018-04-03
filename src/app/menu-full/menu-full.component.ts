@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 import { FoodItem } from '../fooditem';
 import { FoodService } from '../food.service';
@@ -13,15 +14,14 @@ export class MenuFullComponent implements OnInit {
  
   foodsInit: any;
   foods = [ [], [], [], [], [] ];
-  pic = 'assets/white-rice.jpeg';
-  constructor(private foodService: FoodService) { }
+  constructor(private foodService: FoodService, private router: Router) { }
 
   ngOnInit() {
     this.getFoods();
   }
 
   getFoods(): void {
-    this.foodService.getFoods()
+    this.foodService.getFull()
       .subscribe(data => {
         for (var i = 0; i < data.length; i++) {
           switch (data[i]['type']) {
@@ -44,6 +44,10 @@ export class MenuFullComponent implements OnInit {
         }
       });
   }
+  
+  navigate() {
+        this.router.navigate(["menuToday"]);
+    }
 
 }
 

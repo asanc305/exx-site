@@ -1,3 +1,68 @@
-<p>
-  menu-today works!
-</p>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div style="text-align:center">
+  <h1>FULL MENU</h1>
+</div>
+
+<div>
+  <h2>Rice</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
+      <mat-grid-tile *ngFor="let food of foods[0]">
+        <div class="w3 quarter">
+          <img [attr.src]="food.image" alt="{{food.image}}" width="100%"/>
+          {{food.name}}
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div>
+  <h2>BEANS</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
+      <mat-grid-tile *ngFor="let food of foods[1]">
+        <div style="block">
+        <img [attr.src]="food.image" alt="{{food.image}}" height="200px" width="100%" />
+        {{food.name}}
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div>
+  <h2>MEATS</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <mat-grid-list cols="6" rowHeight="250px" gutterSize="20px">
+      <mat-grid-tile *ngFor="let food of foods[2]">
+        <div class="w3 quarter">
+          <img [attr.src]="food.image" alt="{{food.image}}" height="220px" width="100%" />
+          {{food.name}}
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div>
+<h2>SIDES</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <mat-grid-list cols="5" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let food of foods[3]">
+        <img [attr.src]="food.image" alt="{{food.image}}" height="200" width="350"/>
+        {{food.name}}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div>
+<h2>OTHER</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let food of foods[4]">{{food.name}}</mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

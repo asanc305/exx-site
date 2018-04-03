@@ -15,7 +15,9 @@ import { AppComponent } from './app.component';
 import { MenuTodayComponent } from './menu-today/menu-today.component';
 import { MenuFullComponent } from './menu-full/menu-full.component';
 import { FoodService } from './food.service';
-import { SidenavComponent } from './sidenav/sidenav.component'
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TruckStopComponent } from './truck-stop/truck-stop.component'
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { SidenavComponent } from './sidenav/sidenav.component'
     AppComponent,
     MenuTodayComponent,
     MenuFullComponent,
-    SidenavComponent
+    SidenavComponent,
+    TruckStopComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { SidenavComponent } from './sidenav/sidenav.component'
     MatSidenavModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [ FoodService ],
   bootstrap: [ AppComponent ]
