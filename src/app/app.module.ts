@@ -7,8 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-
-
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 import { AppComponent } from './app.component';
@@ -37,7 +38,10 @@ import { TruckStopComponent } from './truck-stop/truck-stop.component'
     MatCheckboxModule,
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+	  MatCardModule,
+	  MatListModule,
+    MatDividerModule
   ],
   providers: [ FoodService ],
   bootstrap: [ AppComponent ]

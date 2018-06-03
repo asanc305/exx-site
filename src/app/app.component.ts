@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Exxon Site';
+  
+  onActivate(event) {
+    window.scroll(0,0);
+  }
 }
+
+
+

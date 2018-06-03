@@ -1,9 +1,27 @@
-<mat-toolbar class="my-toolbar">
+<mat-toolbar class="my-toolbar" color="primary">
   <mat-toolbar-row>
     <a mat-button routerLink=".">Full Menu</a>
     <a mat-button [routerLink]="['menuToday']">Today Menu</a>
-    <a mat-button [routerLink]="['truckStop']">Fleet Cards</a>
+    <a mat-button [routerLink]="['truckStop']">Truck Stop</a>
+    <span class="space"></span>
+    <span> Krome Stop Exxon </span>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+
+<mat-divider></mat-divider>
+
+<mat-divider> </mat-divider>
+<div>
+  <span class="space"></span>
+  <p class="address"> 
+    19900 SW 177TH AVE
+  </p>
+  <p class="address">
+    MIAMI FL 33187
+  </p>
+  <span class="address">
+    305 233 3016
+  </span>
+</div>

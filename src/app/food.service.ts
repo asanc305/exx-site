@@ -10,12 +10,12 @@ export class FoodService {
   constructor(private http: HttpClient) { }
 
   getFull() {
-    this.foods = this.http.get('/full');
+    this.foods = this.http.get('/items');
     return this.foods;
   }
   
   getToday() {
-    this.foods = this.http.get('/today');
+    this.foods = this.http.get('/items/today');
 	return this.foods;
   }
 

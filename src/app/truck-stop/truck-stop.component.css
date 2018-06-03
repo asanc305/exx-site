@@ -1,0 +1,25 @@
+
+.test {
+  padding-top:100px;
+  text-align:center;
+}
+
+.c7 {
+  padding : 20px;
+}
+
+.c8 {
+  display:inline;
+}
+
+.c9 {
+  display:flex;
+  flex-direction:row;
+  
+}
+
+.space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
