@@ -1,0 +1,10 @@
+docker run -it -v ~/Documents/share:/home/share -p 81:3000 mean3
+
+screen mongod
+screen ./bin/www
+ng build
+
+use db foods
+db.foods.find()
+
+db.foods.updateOne( {"name": "Fried Rice"}, { $set: { "image": "assets/fried-rice.jpg"}})

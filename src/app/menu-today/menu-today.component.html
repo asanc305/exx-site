@@ -1,85 +1,64 @@
-<div class="test">
-  <h1>TODAY'S MENU</h1>
-</div>
-
 <div class="container">
-  
-  <div class="container">
-    <mat-card>
-      <mat-card-title> Rice </mat-card-title>
-        <div class="row" *ngFor="let rice of rices">
-          <div class="col-md-3" *ngFor="let item of rice">
-            <div class="centered-block">
-                <img class="img-responsive" [attr.src]="item.image" alt="{{item.image}}">
-                {{item.name}}
-            </div>
-          </div>  
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let food of foods[0]">
+      <div class="card">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
+          <div class="row">
+            <img src="assets/ready.svg" alt="Card image cap"  height="15" width="15">
+            <p><small class="text-muted">Ready</small></p>
+          </div>
         </div>
-    </mat-card>
-  </div>
-  
-  <br>
-  
-  <div class="container">
-    <mat-card>
-      <mat-card-title> Beans </mat-card-title>
-        <div class="row" *ngFor="let bean of beans">
-          <div class="col-md-3" *ngFor="let item of bean">
-            <div class="centered-block">
-                <img class="img-responsive" [attr.src]="item.image" alt="{{item.image}}">
-                {{item.name}}
-            </div>
-          </div>  
-        </div>
-    </mat-card>
-  </div>
-  
-  <br>
-  
-  <div class="container">
-    <mat-card>
-      <mat-card-title> Meats </mat-card-title>
-        <div class="row" *ngFor="let meat of meats">
-          <div class="col-md-3" *ngFor="let item of meat">
-            <div class="centered-block">
-                <img class="img-responsive" [attr.src]="item.image" alt="{{item.image}}">
-                {{item.name}}
-            </div>
-          </div>  
-        </div>
-    </mat-card>
+      </div>
+    </div>
   </div>
 
-  <br>
-  
-  <div class="container">
-    <mat-card>
-      <mat-card-title> Sides </mat-card-title>
-        <div class="row" *ngFor="let side of sides">
-          <div class="col-md-3" *ngFor="let item of side">
-            <div class="centered-block">
-                <img class="img-responsive" [attr.src]="item.image" alt="{{item.image}}">
-                {{item.name}}
-            </div>
-          </div>  
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let food of foods[1]">
+      <div class="card">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
         </div>
-    </mat-card>
+        <img class="card-img-bottom" src="assets/ready.svg" alt="Card image cap"  height="15" width="15">
+
+      </div>
+    </div>
   </div>
 
-  <br>
-  
-  <div class="container">
-    <mat-card>
-      <mat-card-title> Other </mat-card-title>
-        <div class="row" *ngFor="let other of others">
-          <div class="col-md-3" *ngFor="let item of other">
-            <div class="centered-block">
-                <img class="img-responsive" [attr.src]="item.image" alt="{{item.image}}">
-                {{item.name}}
-            </div>
-          </div>  
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let food of foods[2]">
+      <div class="card">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
         </div>
-    </mat-card>
+      </div>
+    </div>
   </div>
-  
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let food of foods[3]">
+      <div class="card">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let food of foods[4]">
+      <div class="card">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

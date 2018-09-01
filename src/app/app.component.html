@@ -1,27 +1,39 @@
-<mat-toolbar class="my-toolbar" color="primary">
-  <mat-toolbar-row>
-    <a mat-button routerLink=".">Full Menu</a>
-    <a mat-button [routerLink]="['menuToday']">Today Menu</a>
-    <a mat-button [routerLink]="['truckStop']">Truck Stop</a>
-    <span class="space"></span>
-    <span> Krome Stop Exxon </span>
-  </mat-toolbar-row>
-</mat-toolbar>
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
 
-<router-outlet (activate)="onActivate($event)"></router-outlet>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<mat-divider></mat-divider>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink=".">Full Menu <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink]="['menuToday']">Today Menu</a>
+      <a class="nav-item nav-link" [routerLink]="['breakfastMenu']">Breakfast Menu</a>
+      <a class="nav-item nav-link" href="#" [routerLink]="['aboutUs']">About Us</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+    </li>
+    </div>
+  </div>
+</nav>
 
-<mat-divider> </mat-divider>
-<div>
-  <span class="space"></span>
-  <p class="address"> 
-    19900 SW 177TH AVE
-  </p>
-  <p class="address">
-    MIAMI FL 33187
-  </p>
-  <span class="address">
-    305 233 3016
-  </span>
+<div class="my-div d-flex flex-column">
+
+  <div class="content">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+
+  <footer class="footer .flex-shrink-0">
+    <div class="container">
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </div>
+  </footer>
+
 </div>
