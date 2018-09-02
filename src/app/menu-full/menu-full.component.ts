@@ -11,7 +11,7 @@ import { FoodService } from '../food.service';
   styleUrls: ['./menu-full.component.css']
 })
 export class MenuFullComponent implements OnInit {
- 
+
   foodsInit: any;
   foods = [ [], [], [], [], [] ];
   constructor(private foodService: FoodService, private router: Router) { }
@@ -26,9 +26,12 @@ export class MenuFullComponent implements OnInit {
         for (var i = 0; i < data.length; i++) {
           switch (data[i]['type']) {
             case 'r':
+              data[i]['icon'] = "assets/plate.svg";
               this.foods[0].push(data[i]);
               break;
             case 'b':
+              data[i]['icon'] = "assets/plate.svg";
+              data[i]['stat'] = "Readyy";
               this.foods[1].push(data[i]);
               break;
             case 'm':
@@ -44,11 +47,9 @@ export class MenuFullComponent implements OnInit {
         }
       });
   }
-  
+
   navigate() {
         this.router.navigate(["menuToday"]);
     }
 
 }
-
-

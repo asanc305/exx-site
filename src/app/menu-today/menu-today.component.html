@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Today Menu </h1>
+  </div>
+</div>
+
+<div class="container">
 
   <div class="row">
     <div class="col-sm-3" *ngFor="let food of foods[0]">
@@ -22,8 +28,6 @@
         <div class="card-body">
           <h5 class="card-title">{{food.name}}</h5>
         </div>
-        <img class="card-img-bottom" src="assets/ready.svg" alt="Card image cap"  height="15" width="15">
-
       </div>
     </div>
   </div>
