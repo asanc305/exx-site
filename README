@@ -9,8 +9,6 @@ db.foods.find()
 
 db.foods.updateOne( {"name": "Fried Rice"}, { $set: { "image": "assets/fried-rice.jpg"}})
 
-1. code to show status
-2. find and rework icons
-3. separate sections
-4. navbar
-5. 
+find and rework icons
+navbar
+start page to update items 

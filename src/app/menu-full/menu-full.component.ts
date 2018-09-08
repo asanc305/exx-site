@@ -24,14 +24,31 @@ export class MenuFullComponent implements OnInit {
     this.foodService.getFull()
       .subscribe(data => {
         for (var i = 0; i < data.length; i++) {
+          switch (data[i]['available']) {
+            case 'y':
+              data[i]['icon'] = "assets/ready.svg";
+              data[i]['stat'] = "Ready";
+              break;
+            case 'n':
+              data[i]['icon'] = "assets/plate.svg";
+              data[i]['stat'] = "Sold Out";
+              break;
+            case 'unavailable':
+              data[i]['icon'] = "assets/unavailable.svg";
+              data[i]['stat'] = "Unavailable";
+              break;
+            case 'cooking':
+              data[i]['icon'] = "assets/cooking.svg";
+              data[i]['stat'] = "Cooking";
+              break;
+          }
+
+
           switch (data[i]['type']) {
             case 'r':
-              data[i]['icon'] = "assets/plate.svg";
               this.foods[0].push(data[i]);
               break;
             case 'b':
-              data[i]['icon'] = "assets/plate.svg";
-              data[i]['stat'] = "Readyy";
               this.foods[1].push(data[i]);
               break;
             case 'm':

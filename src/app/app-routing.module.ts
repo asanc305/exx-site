@@ -9,8 +9,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
   { path: "", component: MenuFullComponent },
   { path: 'menuToday', component: MenuTodayComponent },
-  { path: 'truckStop', component: TruckStopComponent },
-  { path: 'aboutUs', component: AboutUsComponent }
+  { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'backPage', component: TruckStopComponent}
 ];
 
 @NgModule({
