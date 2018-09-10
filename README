@@ -8,7 +8,3 @@ use db foods
 db.foods.find()
 
 db.foods.updateOne( {"name": "Fried Rice"}, { $set: { "image": "assets/fried-rice.jpg"}})
-
-find and rework icons
-navbar
-start page to update items 

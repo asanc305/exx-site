@@ -13,10 +13,14 @@ export class FoodService {
     this.foods = this.http.get('/items');
     return this.foods;
   }
-  
+
   getToday() {
     this.foods = this.http.get('/items/today');
-	return this.foods;
+	  return this.foods;
+  }
+
+  updateFood(item) {
+    return this.http.put('/items/'+item._id, item);
   }
 
 }

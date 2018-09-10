@@ -12,11 +12,53 @@ import { FoodService } from '../food.service';
 export class TruckStopComponent implements OnInit {
 
   foods = [ [], [], [], [], [] ];
+  selectedItems = [];
 
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
     this.getFoods();
+  }
+
+  onSelect(item: FoodItem): void {
+    var index = this.selectedItems.indexOf(item);
+
+    if (index == -1) {
+      this.selectedItems.push(item);
+    }
+    else {
+      this.selectedItems.splice(index,1);
+    }
+
+    console.log(this.selectedItems);
+  }
+
+  markReady() {
+    console.log("mark ready clicked");
+
+    var length = this.selectedItems.length;
+
+    for (var i =0; i< length; i++){
+      var item = this.selectedItems[i];
+      item['available'] = 'y';
+
+      this.foodService.updateFood(item);
+        //.subscribe(() => this.getFoods());
+    }
+  }
+
+  markSold() {
+    console.log("mark sold clicked");
+
+    var length = this.selectedItems.length;
+
+    for (var i =0; i< length; i++){
+      var item = this.selectedItems[i];
+      item['available'] = 'n';
+
+      this.foodService.updateFood(item)
+        .subscribe(() => this.getFoods());
+    }
   }
 
   getFoods(): void {
