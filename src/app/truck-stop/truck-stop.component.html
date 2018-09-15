@@ -1,42 +1,41 @@
-<div class="btn-group " role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-success" (click)="markReady()">Mark Ready</button>
-  <button type="button" class="btn btn-primary" (click)="markSold()">Mark Sold Out</button>
-  <button type="button" class="btn btn-primary">Mark Preparing</button>
-  <button type="button" class="btn btn-primary">Mark Other</button>
-  <button type="button" class="btn btn-danger">Clear All</button>
-</div>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <!-- <div class="btn-group " role="group" aria-label="Basic example"> -->
+    <button type="button" class="btn btn-success" (click)="markReady()">Mark Ready</button>
+    <button type="button" class="btn btn-primary" (click)="markSold()">Mark Sold Out</button>
+    <button type="button" class="btn btn-primary">Mark Preparing</button>
+    <button type="button" class="btn btn-primary">Mark Other</button>
+    <button type="button" class="btn btn-danger" (click)="clearAll()">Clear All</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New</button>
+  <!-- </div> -->
+</nav>
 
 <div class="container">
 
-  <form>
-    <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[0]" (click)="onSelect(food)">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
-            <h5 class="card-title">{{food.name}}</h5>
-            <h6 class="card-text">Spanish Name</h6>
-            <div class="d-flex justify-content-between align-items-center">
-              <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
-              <small class="text-muted">{{food.stat}}</small>
-              <p><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></p>
-            </div>
+  <div class="row">
+    <div class="col-6 col-sm-3" *ngFor="let food of foods[0]" (click)="onSelect(food)">
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+        <div class="card-body" [ngClass]="{'active': food.isSelected}">
+          <h5 class="card-title">{{food.name}}</h5>
+          <h6 class="card-text">Spanish Name</h6>
+          <div class="d-flex justify-content-between align-items-center">
+            <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+            <small class="text-muted">{{food.stat}}</small>
           </div>
         </div>
       </div>
     </div>
-  </form>
+  </div>
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[1]">
+      <div class="col-6 col-sm-3" *ngFor="let food of foods[1]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" [ngClass]="{'active': food.isSelected}">
             <h5 class="card-title">{{food.name}}</h5>
             <p class="card-text">Spanish Name</p>
             <div class="d-flex justify-content-between align-items-center">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
               <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
               <small class="text-muted">{{food.stat}}</small>
             </div>
@@ -48,10 +47,10 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[2]">
+      <div class="col-6 col-sm-3" *ngFor="let food of foods[2]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" [ngClass]="{'active': food.isSelected}">
             <h5 class="card-title">{{food.name}}</h5>
             <div class="d-flex justify-content-between align-items-center">
               <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
@@ -65,10 +64,10 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[3]">
+      <div class="col-6 col-sm-3" *ngFor="let food of foods[3]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" [ngClass]="{'active': food.isSelected}">
             <h5 class="card-title">{{food.name}}</h5>
             <div class="d-flex justify-content-between align-items-center">
               <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
@@ -82,8 +81,8 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[4]">
-        <div class="card mb-4 box-shadow">
+      <div class="col-6 col-sm-3" *ngFor="let food of foods[4]" (click)="onSelect(food)">
+        <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
           <div class="card-body">
             <h5 class="card-title">{{food.name}}</h5>
@@ -97,4 +96,60 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form #newItemForm="ngForm" (ngSubmit) = "newItem(item)">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="item.name" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Spanish Name</label>
+            <input type="text" class="form-control" placeholder="SpanishName" name="name2" [(ngModel)]="item.spanish">
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="inlineRadioOptions">Select Type</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Rice" [(ngModel)]="item.type">
+              <label class="form-check-label" for="inlineRadio1">Rice</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Beans" [(ngModel)]="item.type">
+              <label class="form-check-label" for="inlineRadio2">Beans</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Meats" [(ngModel)]="item.type">
+              <label class="form-check-label" for="inlineRadio3">Meats</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Sides" [(ngModel)]="item.type">
+              <label class="form-check-label" for="inlineRadio3">Sides</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Other" [(ngModel)]="item.type">
+              <label class="form-check-label" for="inlineRadio3">Other</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" type="submit">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

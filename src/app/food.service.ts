@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { FoodItem } from './fooditem';
-import { FOODITEMS1 } from './mock-items';
 
 @Injectable()
 export class FoodService {
@@ -21,6 +20,10 @@ export class FoodService {
 
   updateFood(item) {
     return this.http.put('/items/'+item._id, item);
+  }
+
+  addFood(item) {
+    return this.http.post('/items/', item);
   }
 
 }

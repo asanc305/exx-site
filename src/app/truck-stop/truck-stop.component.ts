@@ -13,6 +13,8 @@ export class TruckStopComponent implements OnInit {
 
   foods = [ [], [], [], [], [] ];
   selectedItems = [];
+  isActive = false;
+  item = new FoodItem();
 
   constructor(private foodService: FoodService) { }
 
@@ -21,6 +23,8 @@ export class TruckStopComponent implements OnInit {
   }
 
   onSelect(item: FoodItem): void {
+    //this.isActive = !this.isActive;
+    item.isSelected = !item.isSelected;
     var index = this.selectedItems.indexOf(item);
 
     if (index == -1) {
@@ -30,7 +34,7 @@ export class TruckStopComponent implements OnInit {
       this.selectedItems.splice(index,1);
     }
 
-    console.log(this.selectedItems);
+    console.log(item.isSelected);
   }
 
   markReady() {
@@ -42,9 +46,10 @@ export class TruckStopComponent implements OnInit {
       var item = this.selectedItems[i];
       item['available'] = 'y';
 
-      this.foodService.updateFood(item);
-        //.subscribe(() => this.getFoods());
+      this.foodService.updateFood(item)
+        .subscribe(() => this.getFoods());
     }
+    this.selectedItems = [];
   }
 
   markSold() {
@@ -59,12 +64,49 @@ export class TruckStopComponent implements OnInit {
       this.foodService.updateFood(item)
         .subscribe(() => this.getFoods());
     }
+    this.selectedItems = [];
   }
+
+  clearAll() {
+    console.log("clear all clicked")
+
+    for (var i = 0; i<=4; i++){
+      console.log("this is i " + i);
+      var length = this.foods[i].length;
+      console.log("this is length " + length)
+
+      for (var j=0; j< length; j++) {
+        console.log("this is j " + j);
+        var item = this.foods[i][j];
+        console.log(item);
+        item.available = 'n';
+        this.foodService.updateFood(item)
+          .subscribe(() => this.getFoods());
+      }
+
+    }
+  }
+
+  save() {
+    //console.log(newItemForm.value.name);
+  }
+
+  newItem(item: FoodItem): void{
+    item.available = "n";
+    this.foodService.addFood(item)
+      .subscribe(() => console.log("done"));
+
+    //this.item = new FoodItem();
+    console.log(item);
+  }
+
 
   getFoods(): void {
     this.foodService.getFull()
       .subscribe(data => {
+        var food = [ [], [], [], [], [] ]
         for (var i = 0; i < data.length; i++) {
+          data[i]['isSelected'] = false;
           switch (data[i]['available']) {
             case 'y':
               data[i]['icon'] = "assets/ready.svg";
@@ -87,21 +129,22 @@ export class TruckStopComponent implements OnInit {
 
           switch (data[i]['type']) {
             case 'r':
-              this.foods[0].push(data[i]);
+              food[0].push(data[i]);
               break;
             case 'b':
-              this.foods[1].push(data[i]);
+              food[1].push(data[i]);
               break;
             case 'm':
-              this.foods[2].push(data[i]);
+              food[2].push(data[i]);
               break;
             case 's':
-              this.foods[3].push(data[i]);
+              food[3].push(data[i]);
               break;
             case 'o':
-              this.foods[4].push(data[i]);
+              food[4].push(data[i]);
               break;
           }
+          this.foods = food;
         }
       });
   }

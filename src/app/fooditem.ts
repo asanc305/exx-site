@@ -3,5 +3,7 @@ export class FoodItem {
   name: string;
   displayName: string;
   type: string;
-  price: number;  
+  available: string;
+  //price: number;
+  isSelected: boolean;
 }
