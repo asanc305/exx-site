@@ -26,4 +26,8 @@ export class FoodService {
     return this.http.post('/items/', item);
   }
 
+  deleteFood(item) {
+    return this.http.delete('/items/'+item._id);
+  }
+
 }

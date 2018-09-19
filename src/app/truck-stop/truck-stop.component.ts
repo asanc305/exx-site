@@ -13,7 +13,6 @@ export class TruckStopComponent implements OnInit {
 
   foods = [ [], [], [], [], [] ];
   selectedItems = [];
-  isActive = false;
   item = new FoodItem();
 
   constructor(private foodService: FoodService) { }
@@ -23,7 +22,6 @@ export class TruckStopComponent implements OnInit {
   }
 
   onSelect(item: FoodItem): void {
-    //this.isActive = !this.isActive;
     item.isSelected = !item.isSelected;
     var index = this.selectedItems.indexOf(item);
 
@@ -87,19 +85,45 @@ export class TruckStopComponent implements OnInit {
     }
   }
 
-  save() {
-    //console.log(newItemForm.value.name);
-  }
-
   newItem(item: FoodItem): void{
+    var words = item.name.split(' ');
+    var i;
+    var image = "assets/";
+
+    for (i=0; i < words.length; i++) {
+      image += words[i];
+      //image.concat(words[i]);
+      if (i != words.length-1)
+        //image.concat('-');
+        image += '-';
+    }
+
+    image += '.jpeg';
+    item.image = image.toLowerCase();
     item.available = "n";
     this.foodService.addFood(item)
-      .subscribe(() => console.log("done"));
+      .subscribe(() => console.log(item));
 
-    //this.item = new FoodItem();
-    console.log(item);
+    this.item = new FoodItem();
   }
 
+  delete(): void {
+    console.log("delete clicked");
+
+    var length = this.selectedItems.length;
+
+    for (var i =0; i< length; i++){
+      var item = this.selectedItems[i];
+
+      this.foodService.deleteFood(item)
+        .subscribe(() => this.getFoods());
+    }
+    this.selectedItems = [];
+  }
+
+  close(): void {
+    this.getFoods();
+  }
 
   getFoods(): void {
     this.foodService.getFull()

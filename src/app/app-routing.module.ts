@@ -5,12 +5,15 @@ import { MenuTodayComponent } from './menu-today/menu-today.component';
 import { MenuFullComponent } from './menu-full/menu-full.component';
 import { TruckStopComponent } from './truck-stop/truck-stop.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   { path: "", component: MenuFullComponent },
   { path: 'menuToday', component: MenuTodayComponent },
   { path: 'aboutUs', component: AboutUsComponent },
-  { path: 'backPage', component: TruckStopComponent}
+  { path: 'backPage', component: TruckStopComponent},
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

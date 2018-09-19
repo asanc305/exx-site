@@ -4,6 +4,7 @@ export class FoodItem {
   displayName: string;
   type: string;
   available: string;
+  image: string;
   //price: number;
   isSelected: boolean;
 }

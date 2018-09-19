@@ -3,9 +3,14 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+//import {Request, Response} from "express";
+// const cookieParser = require('cookie-parser');
+// import * as jwt from 'jsonwebtoken';
+// import * as fs from "fs";
 
-var full = require('./routes/full');
-var today = require('./routes/today');
+
+// var full = require('./routes/full');
+// var today = require('./routes/today');
 var items = require('./routes/items');
 var app = express();
 
@@ -22,7 +27,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(__dirname + '/src'));
 
-app.use('/full', full);
+// app.use('/full', full);
 //app.use('/today', today);
 app.use('/items', items);
 
@@ -50,3 +55,31 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+// app.route('/api/login')
+//     .post(loginRoute);
+//
+// const RSA_PRIVATE_KEY = fs.readFileSync('./private.key');
+//
+// function loginRoute(req: Request, res: Response) {
+//
+//     const email = req.body.name,
+//           password = req.body.pass;
+//
+//     if (validateEmailAndPassword()) {
+//        const userId = findUserIdForEmail(email);
+//
+//         const jwtBearerToken = jwt.sign({}, RSA_PRIVATE_KEY, {
+//                 algorithm: 'RS256',
+//                 expiresIn: 120,
+//                 subject: userId
+//             }
+//
+//           // send the JWT back to the user
+//           //  - multiple options available
+//     }
+//     else {
+//         // send status 401 Unauthorized
+//         res.sendStatus(401);
+//     }

@@ -12,14 +12,17 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule }   from '@angular/forms';
 
+
 import { AppComponent } from './app.component';
 import { MenuTodayComponent } from './menu-today/menu-today.component';
 import { MenuFullComponent } from './menu-full/menu-full.component';
 import { FoodService } from './food.service';
+import { AuthService } from './auth.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TruckStopComponent } from './truck-stop/truck-stop.component';
-import { AboutUsComponent } from './about-us/about-us.component'
+import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component'
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { AboutUsComponent } from './about-us/about-us.component'
     MenuFullComponent,
     SidenavComponent,
     TruckStopComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,7 @@ import { AboutUsComponent } from './about-us/about-us.component'
     MatDividerModule,
     FormsModule
   ],
-  providers: [ FoodService ],
+  providers: [ FoodService, AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

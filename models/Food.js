@@ -5,7 +5,8 @@ var FoodSchema = new mongoose.Schema({
   displayName: String,
   type: String,
   available: String,
-  price: Number,
+  image: String,
+  price: Number
 });
 
 module.exports = mongoose.model('Food', FoodSchema);

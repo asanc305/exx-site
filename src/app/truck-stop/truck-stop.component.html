@@ -6,6 +6,7 @@
     <button type="button" class="btn btn-primary">Mark Other</button>
     <button type="button" class="btn btn-danger" (click)="clearAll()">Clear All</button>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New</button>
+    <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
   <!-- </div> -->
 </nav>
 
@@ -123,30 +124,30 @@
               <label for="inlineRadioOptions">Select Type</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Rice" [(ngModel)]="item.type">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="r" [(ngModel)]="item.type">
               <label class="form-check-label" for="inlineRadio1">Rice</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Beans" [(ngModel)]="item.type">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="b" [(ngModel)]="item.type">
               <label class="form-check-label" for="inlineRadio2">Beans</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Meats" [(ngModel)]="item.type">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="m" [(ngModel)]="item.type">
               <label class="form-check-label" for="inlineRadio3">Meats</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Sides" [(ngModel)]="item.type">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="s" [(ngModel)]="item.type">
               <label class="form-check-label" for="inlineRadio3">Sides</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="Other" [(ngModel)]="item.type">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" value="o" [(ngModel)]="item.type">
               <label class="form-check-label" for="inlineRadio3">Other</label>
             </div>
           </div>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="close()">Close</button>
           <button type="button" class="btn btn-primary" type="submit">Save changes</button>
         </div>
       </form>
