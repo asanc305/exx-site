@@ -3,15 +3,12 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-//import {Request, Response} from "express";
-// const cookieParser = require('cookie-parser');
-// import * as jwt from 'jsonwebtoken';
-// import * as fs from "fs";
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
 
-
-// var full = require('./routes/full');
-// var today = require('./routes/today');
 var items = require('./routes/items');
+var login = require('./routes/login');
+require('./routes/passport');
 var app = express();
 
 var mongoose = require('mongoose');
@@ -27,14 +24,13 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(__dirname + '/src'));
 
-// app.use('/full', full);
-//app.use('/today', today);
+app.use(passport.initialize());
 app.use('/items', items);
+app.use('/login', login);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,31 +51,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-// app.route('/api/login')
-//     .post(loginRoute);
-//
-// const RSA_PRIVATE_KEY = fs.readFileSync('./private.key');
-//
-// function loginRoute(req: Request, res: Response) {
-//
-//     const email = req.body.name,
-//           password = req.body.pass;
-//
-//     if (validateEmailAndPassword()) {
-//        const userId = findUserIdForEmail(email);
-//
-//         const jwtBearerToken = jwt.sign({}, RSA_PRIVATE_KEY, {
-//                 algorithm: 'RS256',
-//                 expiresIn: 120,
-//                 subject: userId
-//             }
-//
-//           // send the JWT back to the user
-//           //  - multiple options available
-//     }
-//     else {
-//         // send status 401 Unauthorized
-//         res.sendStatus(401);
-//     }

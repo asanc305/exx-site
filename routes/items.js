@@ -2,9 +2,16 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Food = require('../models/Food.js');
+var jwt = require('express-jwt');
+
+var auth = jwt({
+  secret: 'MY_SECRET',
+  userProperty: 'payload'
+});
 
 //get all
-router.get('/', function(req, res, next) {
+router.get('/', auth, function(req, res, next) {
+  console.log("gere");
   Food.find(function (err, results) {
     if (err) return next(err);
     res.json(results);

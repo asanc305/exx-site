@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 
 @Component({
@@ -8,11 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Exxon Site';
-  
+
   onActivate(event) {
     window.scroll(0,0);
   }
+
+  constructor(public auth: AuthService) {}
+
 }
-
-
-

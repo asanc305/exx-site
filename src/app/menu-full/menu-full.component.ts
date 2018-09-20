@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { FoodItem } from '../fooditem';
 import { FoodService } from '../food.service';
+import { AuthService } from '../auth.service'
 
 @Component({
   selector: 'app-menu-full',
@@ -14,14 +15,14 @@ export class MenuFullComponent implements OnInit {
 
   foodsInit: any;
   foods = [ [], [], [], [], [] ];
-  constructor(private foodService: FoodService, private router: Router) { }
+  constructor(private foodService: FoodService, private router: Router, private auth: AuthService ) { }
 
   ngOnInit() {
     this.getFoods();
   }
 
   getFoods(): void {
-    this.foodService.getFull()
+    this.auth.getitems()
       .subscribe(data => {
         for (var i = 0; i < data.length; i++) {
           switch (data[i]['available']) {
