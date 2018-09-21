@@ -98,7 +98,7 @@ export class TruckStopComponent implements OnInit {
         image += '-';
     }
 
-    image += '.jpeg';
+    image += '.jpg';
     item.image = image.toLowerCase();
     item.available = "n";
     this.foodService.addFood(item)

@@ -10,8 +10,7 @@ var auth = jwt({
 });
 
 //get all
-router.get('/', auth, function(req, res, next) {
-  console.log("gere");
+router.get('/', function(req, res, next) {
   Food.find(function (err, results) {
     if (err) return next(err);
     res.json(results);
@@ -19,7 +18,7 @@ router.get('/', auth, function(req, res, next) {
 });
 
 //create new item
-router.post('/', function(req, res, next) {
+router.post('/', auth, function(req, res, next) {
   Food.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -43,7 +42,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 //update item
-router.put('/:id', function(req, res, next) {
+router.put('/:id', auth, function(req, res, next) {
   Food.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
@@ -51,14 +50,11 @@ router.put('/:id', function(req, res, next) {
 });
 
 //delete item
-router.delete('/:id', function(req, res, next) {
+router.delete('/:id', auth, function(req, res, next) {
   Food.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
-
-
-
 
 module.exports = router;

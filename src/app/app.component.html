@@ -5,14 +5,15 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link active" routerLink=".">Full Menu <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" [routerLink]="['menuToday']">Today Menu</a>
       <a class="nav-item nav-link" [routerLink]="['breakfastMenu']">Breakfast Menu</a>
       <a class="nav-item nav-link" href="#" [routerLink]="['aboutUs']">About Us</a>
       <a *ngIf="auth.isLoggedIn()" class="nav-item nav-link" [routerLink]="['backPage']">Back Page</a>
-      <a *ngIf="auth.isLoggedIn()" class="nav item nav-link" (click)="auth.logout()" >Log Out</a>
     </div>
+    <button *ngIf="!auth.isLoggedIn()" class="btn btn-outline-success my-1 my-sm-0 ml-auto" [routerLink]="['login']">Log In</button>
+    <button *ngIf="auth.isLoggedIn()" class="btn btn-outline-success my-2 my-sm-0 ml-auto" (click)="auth.logout()">Log Out</button>
   </div>
 </nav>
 
