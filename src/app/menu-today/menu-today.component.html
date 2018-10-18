@@ -4,65 +4,97 @@
   </div>
 </div>
 
-<div class="container">
 
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let food of foods[0]">
-      <div class="card">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
-          <h5 class="card-title">{{food.name}}</h5>
-          <div class="row">
-            <img src="assets/ready.svg" alt="Card image cap"  height="15" width="15">
-            <p><small class="text-muted">Ready</small></p>
+<div class="row">
+
+  <div class="col">
+      <span> This is the new right col </span>
+  </div>
+
+    <div class="col-10 mr-2">
+      <div class="row">
+        <div class="col-6 col-sm-3" *ngFor="let food of foods[0]">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+            <div class="card-body">
+              <h5 class="card-title">{{food.name}}</h5>
+              <h6 class="card-text">Spanish Name</h6>
+              <div class="d-flex justify-content-between align-items-center">
+                <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+                <small class="text-muted">{{food.stat}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col-sm-3" *ngFor="let food of foods[1]">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+              <div class="card-body">
+                <h5 class="card-title">{{food.name}}</h5>
+                <p class="card-text">Spanish Name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+                  <small class="text-muted">{{food.stat}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col-sm-3" *ngFor="let food of foods[2]">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+              <div class="card-body">
+                <h5 class="card-title">{{food.name}}</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+                  <small class="text-muted">{{food.stat}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col-sm-3" *ngFor="let food of foods[3]">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+              <div class="card-body">
+                <h5 class="card-title">{{food.name}}</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+                  <small class="text-muted">{{food.stat}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col-sm-3" *ngFor="let food of foods[4]">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+              <div class="card-body">
+                <h5 class="card-title">{{food.name}}</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+                  <small class="text-muted">{{food.stat}}</small>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let food of foods[1]">
-      <div class="card">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
-          <h5 class="card-title">{{food.name}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let food of foods[2]">
-      <div class="card">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
-          <h5 class="card-title">{{food.name}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let food of foods[3]">
-      <div class="card">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
-          <h5 class="card-title">{{food.name}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let food of foods[4]">
-      <div class="card">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
-          <h5 class="card-title">{{food.name}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>

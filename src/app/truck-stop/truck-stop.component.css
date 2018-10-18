@@ -8,10 +8,14 @@
     cursor: pointer; /* Mouse pointer on hover */
 }
 
-.active {
+/* .active {
   background-color: red;
-}
+} */
 
 .col-red {
   background-color: red;
+}
+
+.active {
+  border: 5px solid;
 }

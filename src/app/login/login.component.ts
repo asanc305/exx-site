@@ -20,22 +20,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    //const val = this.form.value;
-    console.log("login clicked");
-    console.log(this.user.name);
-    console.log(this.user.pass);
-
-
-    this.authService.login(this.user)
-      .subscribe(data => {
-        this.router.navigateByUrl('/backPage');
-        //console.log(data);
-
-        //console.log(this.authService.isLoggedIn());
-
-      })
-
-
+    this.authService.login(this.user).subscribe(data => {
+      this.router.navigateByUrl('/aboutUs');
+    })
   }
 
 }

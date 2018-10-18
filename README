@@ -1,4 +1,4 @@
-docker run -it -v ~/Documents/share:/home/share -p 81:3000 mean3:v3
+docker run -it -v ~/Documents/share:/home/share -p 81:3000 mean3:v4
 
 screen mongod
 screen ./bin/www
@@ -8,3 +8,5 @@ use db foods
 db.foods.find()
 
 db.foods.updateOne( {"name": "Fried Rice"}, { $set: { "image": "assets/fried-rice.jpg"}})
+
+CaribE45
