@@ -1,6 +1,6 @@
 .my-div {
   height: 100vh;
-  margin-top: 80px;
+  margin-top: 56px;
 }
 
 .nab {
@@ -13,4 +13,8 @@
 
 .content {
   flex: 1 0 auto;
+}
+
+.fixed-top-2 {
+  margin-top: 56px;
 }

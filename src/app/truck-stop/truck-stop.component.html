@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-  <!-- <div class="btn-group " role="group" aria-label="Basic example"> -->
-    <button type="button" class="btn btn-success" (click)="markReady()">Mark Ready</button>
-    <button type="button" class="btn btn-primary" (click)="markSold()">Mark Sold Out</button>
-    <button type="button" class="btn btn-primary">Mark Preparing</button>
-    <button type="button" class="btn btn-primary">Mark Other</button>
-    <button type="button" class="btn btn-danger" (click)="clearAll()">Clear All</button>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add New</button>
-    <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
-  <!-- </div> -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top fixed-top-2">
+    <button class="btn btn-outline-primary mr-1" (click)="markReady()">Mark Ready</button>
+    <button class="btn btn-outline-primary mr-1" (click)="markSold()">Mark Sold Out</button>
+    <button class="btn btn-outline-primary mr-1">Mark Preparing</button>
+    <button class="btn btn-outline-primary mr-1">Mark Other</button>
+    <button class="btn btn-outline-primary mr-auto" data-toggle="modal" data-target="#exampleModal">Add New</button>
+
+
+    <button class="btn btn-outline-danger ml-auto mr-1" (click)="clearAll()">Clear All</button>
+    <button class="btn btn-outline-danger" (click)="delete()">Delete</button>
 </nav>
 
-<div class="container">
+<div class="container my-div">
 
   <div class="row">
     <div class="col-6 col-sm-3" *ngFor="let food of foods[0]" (click)="onSelect(food)">
