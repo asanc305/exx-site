@@ -1,54 +1,44 @@
-.grid-pad {
-  padding: 10px 0;
+/*
+Extra small devices (portrait phones, less than 544px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+h5 {font-size: .75rem;} /*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  h5 {font-size:.75rem;} /*1rem = 16px*/
 }
 
-.list {
-  float: left;
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  h5 {font-size:1.25rem;} /*1rem = 16px*/
 }
 
-.list a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-.module {
-  padding: 20px;
-  text-align: center;
-  color: #eee;
-  max-height: 120px;
-  min-width: 120px;
-  background-color: #607D8B;
-  border-radius: 2px;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h5 {font-size:1rem;} /*1rem = 16px*/
 }
 
-.lk {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h5 {font-size:1rem;} /*1rem = 16px*/
 }
 
-.test {
-    padding-top: 50px;
-}
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
 
-.c7 {
-  padding : 20px;
-}
-.example-container {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-}
-
-.example-sidenav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  background: rgba(255, 0, 0, 0.5);
+/* Set width to make card deck cards 100% width */
+@media (min-width: 950px) and (max-width:1100px) {
+  h5 {font-size:2.75rem;color:red;}
 }

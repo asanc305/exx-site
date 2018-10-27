@@ -101,6 +101,10 @@ export class TruckStopComponent implements OnInit {
     image += '.jpg';
     item.image = image.toLowerCase();
     item.available = "n";
+
+    if (item.name == item.spanish) {
+      item.spanish = "\n";
+    }
     this.foodService.addFood(item)
       .subscribe(() => console.log(item));
 

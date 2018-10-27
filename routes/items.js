@@ -19,6 +19,7 @@ router.get('/', function(req, res, next) {
 
 //create new item
 router.post('/', auth, function(req, res, next) {
+  console.log(req.body);
   Food.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);

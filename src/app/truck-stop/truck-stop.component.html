@@ -11,15 +11,33 @@
 </nav>
 
 <div class="container my-div">
-
   <div class="row">
-    <div class="col-6 col-sm-3" *ngFor="let food of foods[0]" (click)="onSelect(food)">
+
+    <div class="col-6 col-sm-3 card-group" *ngFor="let food of foods[0]" (click)="onSelect(food)">
       <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
-        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-        <div class="card-body">
+        <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}">
+        <div class="card-body" style="height: 7rem">
           <h5 class="card-title">{{food.name}}</h5>
-          <h6 class="card-text">Spanish Name</h6>
-          <div class="d-flex justify-content-between align-items-center">
+          <h5 class="card-text">{{food.spanish}}</h5>
+        </div>
+        <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+          <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+          <small class="text-muted">{{food.stat}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-6 col-sm-3 card-group" *ngFor="let food of foods[1]" (click)="onSelect(food)">
+        <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
+          <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
+          <div class="card-body" style="height: 7rem">
+            <h5 class="card-title">{{food.name}}</h5>
+            <h5 class="card-text">{{food.spanish}}</h5>
+          </div>
+          <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
             <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
             <small class="text-muted">{{food.stat}}</small>
           </div>
@@ -30,16 +48,16 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[1]" (click)="onSelect(food)">
+      <div class="col-6 col-sm-3 card-group" *ngFor="let food of foods[2]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" style="height: 7rem">
             <h5 class="card-title">{{food.name}}</h5>
-            <p class="card-text">Spanish Name</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
-              <small class="text-muted">{{food.stat}}</small>
-            </div>
+            <h5 class="card-text">{{food.spanish}}</h5>
+          </div>
+          <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+            <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+            <small class="text-muted">{{food.stat}}</small>
           </div>
         </div>
       </div>
@@ -48,15 +66,16 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[2]" (click)="onSelect(food)">
+      <div class="col-6 col-sm-3 card-group" *ngFor="let food of foods[3]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" style="height: 7rem">
             <h5 class="card-title">{{food.name}}</h5>
-            <div class="d-flex justify-content-between align-items-center">
-              <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
-              <small class="text-muted">{{food.stat}}</small>
-            </div>
+            <h5 class="card-text">{{food.spanish}}</h5>
+          </div>
+          <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+            <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+            <small class="text-muted">{{food.stat}}</small>
           </div>
         </div>
       </div>
@@ -65,32 +84,16 @@
 
   <div class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[3]" (click)="onSelect(food)">
+      <div class="col-6 col-sm-3 card-group" *ngFor="let food of foods[4]" (click)="onSelect(food)">
         <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
           <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
+          <div class="card-body" style="height: 7rem">
             <h5 class="card-title">{{food.name}}</h5>
-            <div class="d-flex justify-content-between align-items-center">
-              <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
-              <small class="text-muted">{{food.stat}}</small>
-            </div>
+            <h5 class="card-text"></h5>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pt-4 my-md-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-6 col-sm-3" *ngFor="let food of foods[4]" (click)="onSelect(food)">
-        <div class="card mb-4 box-shadow" [ngClass]="{'active': food.isSelected}">
-          <img class="card-img-top" [attr.src]="food.image" alt="{{food.image}}" height="150" width="42">
-          <div class="card-body">
-            <h5 class="card-title">{{food.name}}</h5>
-            <div class="d-flex justify-content-between align-items-center">
-              <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
-              <small class="text-muted">{{food.stat}}</small>
-            </div>
+          <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+            <img [attr.src]="food.icon" alt="{{food.icon}}" alt="{{food.icon}}"  height="25" width="30">
+            <small class="text-muted">{{food.stat}}</small>
           </div>
         </div>
       </div>

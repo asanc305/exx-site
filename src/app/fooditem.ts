@@ -1,6 +1,7 @@
 export class FoodItem {
   id: number;
   name: string;
+  spanish: string;
   displayName: string;
   type: string;
   available: string;
